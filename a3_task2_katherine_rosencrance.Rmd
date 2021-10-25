@@ -257,6 +257,8 @@ gasol_hook_by_month <- gasol_hookshots %>%
   group_by(month_new) %>% 
   count(month_new)
 
+gasol_hook_by_month
+
 ```
 
 ### 4. `dplyr::case_when()`
@@ -305,7 +307,10 @@ Note: If you add another condition within `case_when()` that is `TRUE ~ "some th
 
 ```{r}
 # Your code here: 
-
+storms_danger <- storms %>% 
+  mutate(danger = case_when(
+    status == "hurricane" ~ "high",
+    status != "hurricane" ~ "moderate"))
 
 ```
 
