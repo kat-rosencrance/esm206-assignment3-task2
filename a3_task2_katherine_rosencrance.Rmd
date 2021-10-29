@@ -257,6 +257,7 @@ gasol_hook_by_month <- gasol_hookshots %>%
   group_by(month_new) %>% 
   count(month_new)
 
+# View it
 gasol_hook_by_month
 
 ```
